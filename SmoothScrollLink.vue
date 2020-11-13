@@ -19,10 +19,6 @@ export default Scrollable.extend({
       type: String,
       required: true
     },
-    behavior: {
-      default: 'auto',
-      validator: (prop) => ['auto', 'smooth'].includes(prop)
-    },
     block: {
       default: 'start',
       validator: (prop) => ['start', 'center', 'end', 'nearest'].includes(prop)
@@ -30,6 +26,13 @@ export default Scrollable.extend({
     inline: {
       default: 'nearest',
       validator: (prop) => ['start', 'center', 'end', 'nearest'].includes(prop)
+    }
+  },
+
+  data()
+  {
+    return {
+      behavior: 'smooth'
     }
   }
 })
